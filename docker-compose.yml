@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+    app:
+        image: node:latest
+        command: sh -c "npm install -g @angular/cli && npm install && ng serve --host 0.0.0.0 --port 4200"
+        ports:
+            - "4200:4200"
+        working_dir: /workflow-frontend
+        volumes:
+            - ./:/workflow-frontend
